@@ -1,0 +1,6 @@
+Title:Basic Power Drill Safety|Type:Hands-on Workshop|Date:2026-12-05|Time:10:00 AM|Price:RM 15|Venue:ShareShed Hub, Bay Room A|Seats:12
+Title:Mend & Sew Sunday|Type:Repair Clinic|Date:2026-12-06|Time:2:00 PM|Price:RM 10|Venue:ShareShed Hub, Textile Corner|Seats:10
+Title:Composting for Beginners|Type:Garden Workshop|Date:2026-12-12|Time:9:00 AM|Price:Free|Venue:ShareShed Community Garden|Seats:20
+Title:Bicycle Tune-Up Basics|Type:Repair Clinic|Date:2026-12-13|Time:11:00 AM|Price:RM 20|Venue:ShareShed Hub, Workshop Bay|Seats:8
+Title:Furniture Upcycling 101|Type:Hands-on Workshop|Date:2026-12-19|Time:1:00 PM|Price:RM 25|Venue:ShareShed Hub, Bay Room B|Seats:10
+Title:Tool Care & Sharpening|Type:Maintenance Clinic|Date:2026-12-20|Time:10:30 AM|Price:RM 12|Venue:ShareShed Hub, Workshop Bay|Seats:15

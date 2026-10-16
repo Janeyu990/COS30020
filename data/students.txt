@@ -1,0 +1,21 @@
+FirstName:Nur Aisyah|LastName:Rahman|StudentID:102345671|Email:102345671@students.swinburne.edu.my
+FirstName:Muhammad Farid|LastName:Hassan|StudentID:102345682|Email:102345682@students.swinburne.edu.my
+FirstName:Siti Nurhaliza|LastName:Ismail|StudentID:102345693|Email:102345693@students.swinburne.edu.my
+FirstName:Ahmad Irfan|LastName:Zulkifli|StudentID:102345704|Email:102345704@students.swinburne.edu.my
+FirstName:Nurul Izzati|LastName:Hamzah|StudentID:102345715|Email:102345715@students.swinburne.edu.my
+FirstName:Wei Jie|LastName:Tan|StudentID:102345726|Email:102345726@students.swinburne.edu.my
+FirstName:Grace|LastName:Lim|StudentID:102345737|Email:102345737@students.swinburne.edu.my
+FirstName:Daniel|LastName:Wong|StudentID:102345748|Email:102345748@students.swinburne.edu.my
+FirstName:Jia Hui|LastName:Ng|StudentID:102345759|Email:102345759@students.swinburne.edu.my
+FirstName:Kah Wai|LastName:Chong|StudentID:102345760|Email:102345760@students.swinburne.edu.my
+FirstName:Mei Ling|LastName:Lau|StudentID:102345771|Email:102345771@students.swinburne.edu.my
+FirstName:Priya|LastName:Nathan|StudentID:102345782|Email:102345782@students.swinburne.edu.my
+FirstName:Arjun|LastName:Subramaniam|StudentID:102345793|Email:102345793@students.swinburne.edu.my
+FirstName:Kavitha|LastName:Rajendran|StudentID:102345804|Email:102345804@students.swinburne.edu.my
+FirstName:Jason|LastName:Anak Jugah|StudentID:102345815|Email:102345815@students.swinburne.edu.my
+FirstName:Melissa|LastName:Anak Ngumbang|StudentID:102345826|Email:102345826@students.swinburne.edu.my
+FirstName:Dayang Nurul|LastName:Awang|StudentID:102345837|Email:102345837@students.swinburne.edu.my
+FirstName:Marcus|LastName:Tan|StudentID:102345848|Email:102345848@students.swinburne.edu.my
+FirstName:Rachel|LastName:Sim|StudentID:102345859|Email:102345859@students.swinburne.edu.my
+FirstName:Hafiz|LastName:Abdullah|StudentID:102345860|Email:102345860@students.swinburne.edu.my
+FirstName:Jane|LastName:Yu|StudentID:104395810|Email:104395810@students.swinburne.edu.my

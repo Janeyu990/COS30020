@@ -1,0 +1,6 @@
+Id:1|Name:Aisyah Rahman|Activity:Furniture Upcycling 101|Image:img/community/contrib1.jpg|Caption:Turned a wobbly thrifted chair into a sturdy reading nook seat using the borrowed clamp set.
+Id:2|Name:Marcus Tan|Activity:Bicycle Tune-Up Basics|Image:img/community/contrib2.jpg|Caption:Fixed my sister's bike brakes and chain with tools from the library - saved a trip to the shop.
+Id:3|Name:Priya Nathan|Activity:Composting for Beginners|Image:img/community/contrib3.jpg|Caption:Started a balcony compost bin after the workshop, three months of kitchen scraps now feed my herbs.
+Id:4|Name:Farid Hassan|Activity:Mend & Sew Sunday|Image:img/community/contrib4.jpg|Caption:Make a pair of pajama pants using a sewing machine.
+Id:5|Name:Grace Lim|Activity:Basic Power Drill Safety|Image:img/community/contrib5.jpg|Caption:built a small kitchen shelf modeled after an IKEA design  with a lot of patience by borrowed a power drill.
+Id:6|Name:Daniel Wong|Activity:Tool Care & Sharpening|Image:img/community/contrib6.jpg|Caption:Learned to sharpen my kitchen knives properly, they cut like new again.

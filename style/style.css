@@ -1,0 +1,975 @@
+body{
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #F7F0E6;
+    color: #3E2A22;
+    line-height: 1.55;
+    /* Keep the footer at the bottom of the window on short pages (e.g. login):
+       the page is a column, and the main content stretches to fill the gap */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body a{
+    color: #6B4030;
+    text-decoration: none;
+}
+
+body a:hover{
+    color: #A95432;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/*Header and nav bar*/
+.site-header{
+    background-color: #865645;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 6px 20px rgba(74, 44, 32, 0.16);
+}
+
+.navbar{ 
+	max-width: 1150px; 
+	margin: 0 auto; 
+	display: flex; 
+	align-items: center; 
+	justify-content: space-between; 
+	padding: 0.8rem 1.25rem; 
+} 
+
+.brand{ 
+	color: #FFF8EF; 
+	font-weight: 700; 
+	font-size: 1.25rem; 
+	display: inline-flex; 
+	align-items: center; 
+	gap: 8px; 
+} 
+
+.brand img{ 
+	height: 36px; 
+	width: auto; 
+	display: block; 
+} 
+
+.brand:hover{ 
+	color: #E8C39E; 
+} 
+
+.nav-toggle{ 
+	display: none; 
+	background: none; 
+	border: none; 
+	color: #FFF8EF; 
+	font-size: 1.5rem; 
+	cursor: pointer; 
+} 
+
+.nav-links{ 
+	list-style: none; 
+	display: flex; 
+	align-items: center; 
+	gap: 1.1rem; 
+	margin: 0; 
+	padding: 0; 
+} 
+
+.nav-links a{ 
+	color: #F3E5D5; 
+	font-weight: 500; 
+	padding: 0.4rem 0.2rem; 
+	border-bottom: 2px solid transparent; 
+} 
+
+.nav-links a:hover, .nav-links a.active{ 
+	color: #FFF8EF; 
+	border-bottom-color: #C99A3D; 
+} 
+
+.btn-nav-register{ 
+	background-color: #C96F3D; 
+	color: #FFF !important; 
+	padding: 0.45rem 0.9rem !important; 
+	border-radius: 999px; 
+	border-bottom: none !important; 
+} 
+
+.btn-nav-register:hover{ 
+	background-color: #A95432; 
+} 
+
+.btn-nav-logout{ 
+	background-color: #FFF1DC; 
+	color: #4A2C20 !important; 
+	font-weight: 600 !important; 
+	padding: 0.45rem 0.9rem !important; 
+	border-radius: 999px; 
+	border-bottom: none !important; 
+} 
+
+.btn-nav-logout:hover{ 
+	background-color: #E8C39E; 
+} 
+
+/*Page layout and footer*/
+.page-content{
+    flex: 1;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 3rem;
+}
+
+.site-footer{ 
+	background-color: #4A2C20; 
+	color: #E8D8C8; 
+	text-align: center; 
+	padding: 1.25rem; 
+	font-size: 0.9rem; 
+} 
+
+.site-footer a{ 
+	color: #E8C39E; 
+} 
+
+/*Home page hero section*/
+/*Rotating photo banner on the homepage*/
+.banner{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.banner-slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.banner-slide.active{
+    opacity: 0.6;
+}
+
+/* "Welcome to ShareShed" text in the middle of the banner.
+   It sits on top of the photos (z-index) and the dark shadow keeps it
+   readable on light or busy photos. */
+.banner-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    margin: 0;
+    width: 90%;
+    text-align: center;
+    color: #3E2A22;
+    font-size: 3.7rem;
+    font-weight: 700;
+    text-shadow: 0 2px 12px rgba(115, 69, 69, 0.6);
+}
+
+.banner-dots{
+    position: absolute;
+    bottom: 14px;
+    width: 100%;
+    text-align: center;
+}
+
+.banner-dot{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.banner-dot.active{
+    background-color: #FFFFFF;
+}
+
+.hero{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 0 3rem;
+    flex-wrap: wrap;
+}
+
+.hero > div{ 
+	flex: 1 1 400px; 
+} 
+
+.hero h1{ 
+	font-size: 2.4rem; 
+	color: #4A2C20; 
+	margin-bottom: 0.5rem; 
+} 
+
+.hero p{ 
+	color: #765F52; 
+	font-size: 1.05rem; 
+} 
+
+.hero-photo{ 
+	flex: 1 1 320px; 
+	border-radius: 14px; 
+	overflow: hidden; 
+	box-shadow: 0 6px 20px rgba(74, 44, 32, 0.16); 
+} 
+
+.hero-actions{ 
+	display: flex; 
+	gap: 0.9rem; 
+	flex-wrap: wrap; 
+	margin-top: 1.5rem; 
+} 
+
+/*Buttons - used all over the site (menu cards, forms, catalogue)*/
+.btn{
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.btn-primary{ 
+	background-color: #6B4030; 
+	color: #FFF; 
+} 
+
+.btn-primary:hover{ 
+	background-color: #4A2C20; 
+	color: #FFF; 
+} 
+
+.btn-accent{ 
+	background-color: #C96F3D; 
+	color: #FFF; 
+} 
+
+.btn-accent:hover{ 
+	background-color: #A95432; 
+	color: #FFF; 
+} 
+
+.btn-outline{ 
+	background-color: transparent; 
+	border: 2px solid #6B4030; 
+	color: #6B4030; 
+} 
+
+.btn-outline:hover{ 
+	background-color: #6B4030; 
+	color: #FFF; 
+} 
+
+.btn-secondary{ 
+	background-color: #E3D3BC; 
+	color: #3E2A22; 
+} 
+
+.btn-secondary:hover{ 
+	background-color: #D2BFA2; 
+} 
+
+.btn-block{ 
+	display: block; 
+	width: 100%; 
+} 
+
+.btn:disabled, .btn.disabled{ 
+	opacity: 0.55; 
+	cursor: not-allowed; 
+} 
+
+/* Disabled buttons keep their normal colour on hover, so they don't look clickable */
+.btn-primary:disabled:hover{ 
+	background-color: #6B4030; 
+} 
+
+/* Menu card for a feature that isn't open yet (Assignment 2): greyed out, can't be clicked */
+.card-disabled{ 
+	opacity: 0.6; 
+	cursor: not-allowed; 
+	filter: grayscale(60%); 
+} 
+
+.card.card-disabled:hover{ 
+	transform: none; 
+} 
+
+/*Cards and grids - catalogue items, menu cards, activity cards*/
+.card-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.4rem;
+    margin: 1.5rem 0;
+}
+
+.card{ 
+	background-color: #FFF; 
+	border-radius: 14px; 
+	box-shadow: 0 6px 20px rgba(74, 44, 32, 0.12); 
+	overflow: hidden; 
+	display: flex; 
+	flex-direction: column; 
+	transition: transform 0.15s ease; 
+} 
+
+.card:hover{ 
+	transform: translateY(-4px); 
+} 
+
+/* Tool card that matches the user's search (Tool Catalogue page) */
+.card-found{
+    outline: 4px solid #4A2C20;
+    outline-offset: 3px;
+}
+
+.card img{ 
+	height: 150px; 
+	object-fit: cover; 
+	width: 100%; 
+	background-color: #E8C39E; 
+} 
+
+.card-body{ 
+	padding: 1rem 1.1rem 1.2rem; 
+	display: flex; 
+	flex-direction: column; 
+	gap: 0.5rem; 
+	flex: 1; 
+	justify-content: center;
+} 
+
+.card-body h3{ 
+	margin: 0; 
+	color: #6B4030; 
+	text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+} 
+
+.card-body p{ 
+	margin: 0; 
+	color: #765F52; 
+	text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4);
+	font-size: 1rem; 
+	font-weight: 600;	
+} 
+
+.card-price{ 
+	font-weight: 700; 
+	color: #A95432; 
+} 
+
+/* Keeps cards at a normal width even when there's only one or two
+   (auto-fill keeps the empty columns instead of stretching the card) */
+.card-grid-fixed{ 
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+} 
+
+/* Stop a badge inside a card from stretching across the whole card */
+.card-body .badge{ 
+	align-self: flex-start; 
+} 
+
+/* Home page - "no bookings yet" box and "See all" link */
+.empty-card{ 
+	max-width: 480px; 
+	margin-bottom: 2rem; 
+} 
+
+.empty-card .btn{ 
+	margin-top: 0.6rem; 
+} 
+
+.section-more{ 
+	margin-top: 1rem; 
+	text-align: right; 
+	font-weight: 600; 
+} 
+
+.card-footer{ 
+	margin-top: auto; 
+} 
+
+.menu-card{
+    position: relative;
+    text-align: center;
+    padding: 1.6rem 1.2rem;
+    min-height: 250px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Individual card background images */
+.card-tool{
+    background-image: linear-gradient(
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.70)
+    ), url("../img/menu-tool.jpg");
+}
+
+.card-workshop{
+    background-image: linear-gradient(
+        rgba(255,255,255,0.60),
+        rgba(255,255,255,0.60)
+    ), url("../img/menu-workshop.jpg");
+}
+
+.card-community{
+    background-image: linear-gradient(
+        rgba(255,255,255,0.60),
+        rgba(255,255,255,0.60)
+    ), url("../img/menu-community.jpg");
+}
+
+.card-smart{
+    background-image: linear-gradient(
+        rgba(255,255,255,0.60),
+        rgba(255,255,255,0.60)
+    ), url("../img/menu-smart.jpg");
+}
+
+.card-tutorial{
+    background-image: linear-gradient(
+        rgba(255,255,255,0.60),
+        rgba(255,255,255,0.60)
+    ), url("../img/menu-tutorial.jpg");
+}
+
+.menu-card .icon{ 
+	font-size: 2.4rem; 
+} 
+
+.menu-card h3{ 
+	margin: 0.4rem 0; 
+} 
+
+/* 让菜单卡片里的内容在卡片中间 */
+.menu-card{
+    justify-content: center;
+    align-items: center;
+}
+
+/* 文字后面的半透明白色小卡片 */
+.menu-card .card-body{
+    flex: 0 0 auto;              /* 不再撑满整张卡，只包住文字 */
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(74, 44, 32, 0.12);
+    backdrop-filter: blur(0.5px);  /* 毛玻璃效果，可选 */
+}
+
+/* Tutorials 卡片很宽，限制一下白卡的宽度 */
+.card-tutorial .card-body{
+    max-width: 720px;
+}
+
+/*Section titles used above most content blocks*/
+.section-title{
+    color: #4A2C20;
+    border-left: 5px solid #C99A3D;
+    padding-left: 0.7rem;
+    margin: 2rem 0 0.6rem;
+}
+
+.section-lead{ 
+	color: #765F52; 
+	margin-top: 0; 
+} 
+
+/*Forms - registration, login, activity booking, update profile*/
+.form-wrap{
+    max-width: 560px;
+    margin: 1.5rem auto;
+    background-color: #FFF;
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(74, 44, 32, 0.12);
+}
+
+.form-wrap h2{ 
+	color: #4A2C20; 
+	margin-top: 0; 
+} 
+
+.field{ 
+	margin-bottom: 1.1rem; 
+} 
+
+.field label{ 
+	display: block; 
+	font-weight: 600; 
+	margin-bottom: 0.35rem; 
+} 
+
+.field input, .field select, .field textarea{ 
+	width: 100%; 
+	padding: 0.6rem 0.7rem; 
+	border: 1px solid #C9B69D; 
+	border-radius: 8px; 
+	font-size: 1rem; 
+	font-family: inherit; 
+} 
+
+.field input:focus, .field select:focus, .field textarea:focus{ 
+	outline: none; 
+	border-color: #B88A5A; 
+	box-shadow: 0 0 0 3px rgba(184,138,90,0.2); 
+} 
+
+/* Read-only fields (e.g. workshop date filled in automatically) */
+.field input[readonly]{ 
+	background-color: #F3ECE3; 
+	color: #5A4438; 
+	cursor: not-allowed; 
+} 
+
+.field-hint{ 
+	font-size: 0.8rem; 
+	color: #765F52; 
+	margin-top: 0.25rem; 
+} 
+
+/* Error message shown under a form field (registration page) */
+.field-error{ 
+	font-size: 0.85rem; 
+	color: #A33A2E; 
+	margin-top: 0.3rem; 
+} 
+
+.field-error:empty{ 
+	display: none; 
+} 
+
+.field input.input-error, .field select.input-error{ 
+	border-color: #C0584A; 
+	background-color: #FDF3F1; 
+} 
+
+.form-actions{ 
+	display: flex; 
+	gap: 0.8rem; 
+	margin-top: 1.4rem; 
+	flex-wrap: wrap; 
+} 
+
+.alert{ 
+	padding: 0.9rem 1.1rem; 
+	border-radius: 10px; 
+	margin-bottom: 1.2rem; 
+	font-size: 0.95rem; 
+} 
+
+.alert-error{ 
+	background-color: #F5DDD6; 
+	color: #713B35; 
+	border: 1px solid #D9A69A; 
+} 
+
+.alert-success{ 
+	background-color: #E8D8C8; 
+	color: #4A2C20; 
+	border: 1px solid #C9A989; 
+} 
+
+.alert ul{ 
+	margin: 0.3rem 0 0 1.1rem; 
+	padding: 0; 
+} 
+
+/* Tutorial cards: video thumbnail at the top of each card.
+   aspect-ratio keeps the box in YouTube's 16:9 shape. */
+.tutorial-thumb{
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background-color: #3E2A22;
+    overflow: hidden;
+}
+
+.card .tutorial-thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Red play button in the middle of the thumbnail */
+.play-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 54px;
+    height: 38px;
+    border-radius: 10px;
+    background-color: rgba(204, 0, 0, 0.9);
+    color: #FFFFFF;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Slight zoom on the picture when hovering over the card */
+.card:hover .tutorial-thumb img{
+    transform: scale(1.05);
+}
+
+/* Tutorial cards: line everything up from the top so every card's
+   badge, title and summary start at the same height.
+   The title always takes exactly 2 lines and the summary exactly 3 lines
+   (longer text is cut off with "..."), so all cards match. */
+.tutorial-card .card-body{
+    justify-content: flex-start;
+}
+
+.tutorial-card h3{
+    min-height: 3.1em;              /* 2 lines x line-height 1.55 */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.tutorial-card .card-body p:not(.field-hint){
+    min-height: 4.65em;             /* 3 lines x line-height 1.55 */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Push "By ShareShed Team" to the bottom of every card */
+.tutorial-card .field-hint{
+    margin-top: auto;
+}
+
+/* Tutorials with no video: a brown block with a label instead of a picture */
+.tutorial-thumb-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #865645;
+}
+
+.tutorial-thumb-text span{
+    color: #F3E5D5;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(243, 229, 213, 0.5);
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+}
+
+/*Detail pages - community contribution, tutorial detail*/
+/* YouTube video on the tutorial detail page. padding-top: 56.25% keeps
+   the box in a 16:9 shape at any width, and the iframe fills the box. */
+.video-wrap{
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin: 1rem 0 0.3rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.video-wrap iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.detail-box{
+    background-color: #FFF;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(74, 44, 32, 0.12);
+    padding: 1.8rem;
+    max-width: 700px;
+}
+
+.detail-box img{ 
+	border-radius: 10px; 
+	margin-bottom: 1.2rem; 
+} 
+
+.detail-row{ 
+	display: flex; 
+	gap: 0.5rem; 
+	padding: 0.4rem 0; 
+	border-bottom: 1px dashed #D8C8B5; 
+} 
+
+.detail-row strong{ 
+	min-width: 160px; 
+	color: #6B4030; 
+} 
+
+/*Profile page (Task 7) and update profile page (Task 8)*/
+.profile-card{
+    background-color: #FFF;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(74, 44, 32, 0.12);
+    padding: 2rem;
+    max-width: 640px;
+    margin: 1.5rem auto;
+    text-align: center;
+}
+
+.profile-photo{ 
+	width: 140px; 
+	height: 140px; 
+	border-radius: 50%; 
+	object-fit: cover; 
+	margin: 0 auto 1rem; 
+	border: 4px solid #E8C39E; 
+} 
+
+.declaration{ 
+	text-align: left; 
+	background-color: #F7F0E6; 
+	border: 1px solid #D8C8B5; 
+	border-radius: 10px; 
+	padding: 1rem 1.2rem; 
+	font-size: 0.9rem; 
+	margin-top: 1.2rem; 
+} 
+
+/*Small badges - used for tags like "Assignment 2" or workshop type*/
+.badge{
+    display: inline-block;
+    background-color: #E8C39E;
+    color: #4A2C20;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.badge-coming-soon{ 
+	background-color: #F1D3A8; 
+	color: #8A4F3D; 
+} 
+
+/* Search bar on the Tool Catalogue page */
+.search-bar{
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    margin: 1.2rem 0 1.5rem;
+}
+
+.search-bar input{
+    flex: 1 1 260px;
+    padding: 0.65rem 1rem;
+    border: 1px solid #C9B69D;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.search-bar input:focus{
+    outline: none;
+    border-color: #B88A5A;
+    box-shadow: 0 0 0 3px rgba(184, 138, 90, 0.2);
+}
+
+.category-block{ 
+	margin-bottom: 2.5rem; 
+} 
+
+.notice-box{ 
+	border: 2px dashed #C9B69D; 
+	border-radius: 14px; 
+	padding: 2rem; 
+	text-align: center; 
+	color: #765F52; 
+	background-color: #FFF; 
+} 
+
+/*Responsive - mobile nav menu*/
+@media (max-width: 820px) {
+    .banner{
+        height: 220px;
+    }
+
+    .banner-text{
+        font-size: 1.8rem;
+    }
+
+    .hero{
+        flex-direction: column;
+    }
+
+    .nav-toggle{ 
+        display: block; 
+    } 
+
+    .nav-links{ 
+        display: none; 
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        right: 0; 
+        background-color: #4A2C20; 
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 1rem 1.25rem; 
+        gap: 0.8rem; 
+    } 
+
+    .nav-links.open{ 
+        display: flex; 
+    } 
+
+    .navbar{ 
+        position: relative; 
+    } 
+}
+
+
+/* ----------------------------------------------------------
+   Small layout helpers (these used to be style="..." written
+   directly inside the PHP pages; now all styling lives here)
+   ---------------------------------------------------------- */
+
+/* Extra space above an element */
+.space-top-sm{
+    margin-top: 0.5rem;
+}
+
+.space-top-md{
+    margin-top: 1.4rem;
+}
+
+.space-top-lg{
+    margin-top: 1.5rem;
+}
+
+.space-top-xl{
+    margin-top: 2rem;
+}
+
+/* A wider detail box (About page) */
+.detail-box-wide{
+    max-width: 820px;
+}
+
+/* Centre the buttons in a row of hero-actions (Profile page) */
+.centered-actions{
+    justify-content: center;
+}
+
+/* Profile photo preview at the top of the Update Profile form */
+.avatar-preview{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Tutorials page search box: full width, less padding than a normal form */
+.search-panel{
+    max-width: 100%;
+    padding: 1.2rem 1.5rem;
+}
+
+.search-panel .field{
+    margin-bottom: 0;
+}
+
+/* Search input and button side by side */
+.search-row{
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.search-row input{
+    flex: 1;
+    min-width: 200px;
+}
+
+
+/* ----------------------------------------------------------
+   Back to top button (bottom-right corner, every page)
+   Hidden by default; js/script.js adds the "show" class
+   once the user scrolls down.
+   ---------------------------------------------------------- */
+.back-to-top{
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 60;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background-color: #865645;
+    color: #FFF8EF;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(74, 44, 32, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, background-color 0.2s ease;
+}
+
+/* The arrow inside the button: a simple chevron drawn with SVG.
+   stroke: currentColor makes it use the button's text colour. */
+.back-to-top-icon{
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    display: block;
+    margin: 0 auto;
+}
+
+.back-to-top.show{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover{
+    background-color: #C96F3D;
+}
+
+.back-to-top:focus-visible{
+    outline: 3px solid #C99A3D;
+    outline-offset: 3px;
+}
