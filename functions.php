@@ -11,6 +11,9 @@
 
     session_start();
 
+    // Connect to MySQL ($conn) and create the database/tables if needed
+    require_once __DIR__ . '/db.php';
+
     // File locations - all inside the data folder as required by the brief
     define('DATA_DIR', __DIR__ . '/data');
     define('USER_DIR', DATA_DIR . '/User');
